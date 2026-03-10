@@ -16,7 +16,7 @@ def get_info() -> tuple[int, str, str]:
         csftoken (str): csftoken for cookie
         sessionid (str): sessionid for cookie
     """
-    num = input('刷第几个课？(-1表示全刷): ')
+    num = int(input('刷第几个课？(-1表示全刷): '))
     csftoken = 'your_token'
     sessionid = 'your_sessionid'
     return num, csftoken, sessionid
@@ -286,8 +286,15 @@ def make_a_comment(driver: webdriver.Chrome) -> None:
     course_initialization(driver)
     
 def main():
+    print("=============================")
+    print("欢迎来到中南大学雨课堂刷课脚本v1.1")
+    print("请先检查csftoken和sessionid是否已经填写")
+    print("任务日志将在下方显示")
+    print("=============================")
     num, csftoken, sessionid = get_info()
-    if num and csftoken and sessionid:
+    if csftoken == 'your_token' or sessionid == 'your_sessionid':
+        print(f"{time.asctime(time.localtime())} 请先填写csftoken及sessionid!")
+    elif num and csftoken and sessionid:
         opt = Options()
         opt.add_argument('--disable-blink-features=AutomationControlled')
         opt.add_experimental_option('excludeSwitches', ['enable-automation'])
@@ -305,11 +312,15 @@ def main():
             for num in range(1, class_num+1):
                 select_course(browser, num)
                 course_initialization(browser)
+            time.sleep(3)
+            browser.quit()
         else:
             mainpage_initialization(browser, csftoken, sessionid)
             time.sleep(2)
             select_course(browser, num)
             course_initialization(browser)
+            time.sleep(3)
+            browser.quit()
             
 
 if __name__ == '__main__':
