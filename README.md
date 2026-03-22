@@ -76,7 +76,7 @@ xt-volumebutton
 
 ### 讨论发言
 
-通过 ActionChains 模拟输入并提交某个固定评论（可在make_a_comment方法中修改变量text_content）。
+通过 ActionChains 模拟输入并提交某个固定评论（可在make_a_comment函数中修改变量text_content）。
 
 ## 📂 项目结构
 
