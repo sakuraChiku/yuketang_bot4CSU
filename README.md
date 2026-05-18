@@ -26,7 +26,7 @@
 git clone https://github.com/sakuraChiku/CSU_yuketang_automator.git
 
 ### 2. 安装依赖
-pip install selenium
+在终端中使用命令：``pip install selenium``
 
 ### 3. 下载 ChromeDriver
 确保 ChromeDriver 版本与本地 Chrome 版本相近。
@@ -36,13 +36,16 @@ pip install selenium
 1. 打开浏览器的调试台
 2. 在“应用”选项卡的Cookies选项中获取雨课堂的 csrftoken 与 sessionid
 3. 在 yuketang.py 中填入：
-
+```python
 csftoken = 'your_token'
+```
+```python
 sessionid = 'your_sessionid'
+```
 
 4. 运行：
 
-python yuketang.py
+``python yuketang.py``
 
 ## 🧠 核心逻辑说明
 
@@ -62,10 +65,10 @@ python yuketang.py
 ### 视频播放
 
 直接操作 HTML5 video 标签：
-
+```
 xt-playbutton
 xt-volumebutton
-
+```
 绕过 UI 控件，保证稳定性。
 
 同时每隔五秒获取一次播放进度：
@@ -76,12 +79,12 @@ xt-volumebutton
 
 ### 讨论发言
 
-通过 ActionChains 模拟输入并提交某个固定评论（可在make_a_comment函数中修改变量text_content）。
+通过 ``ActionChains`` 模拟输入并提交某个固定评论（可在``make_a_comment``函数中修改变量``text_content``）。
 
 ## 📂 项目结构
 
-yuketang_for_csu.py       # 主程序
-README.md         # 项目说明
+``yuketang_for_csu.py``       # 主程序
+``README.md``         # 项目说明
 
 ## ⚠ 已知问题
 
@@ -93,3 +96,8 @@ README.md         # 项目说明
 本项目仅用于学习 Selenium 自动化技术。
 请勿将本项目用于违反学校或平台规则的行为。
 作者不承担任何后果。
+
+## ❓问题反馈
+
+由于浏览器驱动的更新，以及网页本身结构的改变，作者无法保证该脚本在任何时间对任何版本的Chrome浏览器生效。  
+如有问题，请及时在``issue``栏目中发布。
