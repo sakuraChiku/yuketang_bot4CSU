@@ -1,7 +1,9 @@
 # CSU_yuketang_automator
 基于selenium实现的中南大学雨课堂刷课脚本
+A script that can go through online courses on Yuketang automatically for CSU based on selenium
 
 本项目通过 Selenium 模拟浏览器行为，实现对雨课堂课程内容的自动化操作。
+Selenium, which simulates human's operation on web browser, is difficult to detect, ensuring safe and effective automatic operations.
 
 当前支持功能：
 
@@ -11,6 +13,15 @@
 - 自动静音播放视频
 - 自动完成讨论发言
 - 自动跳转至下一个未完成任务
+
+Supported functions:
+
+- Auto login (by injecting Cookies)
+- Auto course selection
+- Read passages automatically
+- Mute and play videos automatically
+- Post comments automatically
+- Jump to the next uncompleted task automatically
 
 ## 🛠 技术栈
 
